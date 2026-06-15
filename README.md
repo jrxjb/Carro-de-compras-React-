@@ -1,10 +1,8 @@
 # Carro-de-compras-React-
 Carro de compra en React sin guia
 
-
+Url para trabajar 
 https://fakestoreapi.com/products
-
-
 # Enunciado
 
 1. Ecommerce

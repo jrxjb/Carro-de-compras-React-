@@ -1,5 +1,10 @@
+import GetUrl from "./products/products"
+import { useEffect, useState } from "react";
 export default function App(){
+
    return(<>
-Hola gatito 
+<p>Prueba</p>
+<GetUrl/>
     </>)
 }
+
