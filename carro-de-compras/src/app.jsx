@@ -7,6 +7,7 @@ const [category,serCategory] =useState("")
 const [priceCategory,SetPriceCategory] = useState("all")
 const [addToCar,SetAddToCar] = useState("none")
 const [renderAddToCar,setRenderAddToCar] = useState([])
+const [cantidad,SetCantidad] = useState(0)
 
 function categorySeach(){
 SetSeachByCa(!seachByCa)
@@ -16,7 +17,9 @@ SetSeachByCa(!seachByCa)
 //añadir al carrito 
 
 function handleAddToCar(producto){
-setRenderAddToCar([...renderAddToCar,producto])
+const existe = renderAddToCar.some((item)=>item.id==producto.id)
+if(existe)return
+setRenderAddToCar([...renderAddToCar,{...producto,cantidadItems:1}])
 }
 
 
@@ -24,6 +27,16 @@ function handleRemovetoCar(id){
 const NewToRemove = renderAddToCar.filter ( (item)=> item.id !==id)
 
 setRenderAddToCar(NewToRemove)
+SetCantidad(0)
+}
+
+function handleAddMore(id){
+setRenderAddToCar( renderAddToCar.map((item)=>item.id==id?
+{...item,cantidadItems:item.cantidadItems+1}:item))
+}
+function handleLess(id){
+setRenderAddToCar( renderAddToCar.map((item)=>item.id==id && item.cantidadItems>1?
+{...item,cantidadItems:item.cantidadItems-1}:item))
 }
 
 	 return(
@@ -51,11 +64,14 @@ setRenderAddToCar(NewToRemove)
 					<h2>Carrito</h2>
 						{renderAddToCar.map((item,index) => {
 							return(
-								 <section key={index}>
+								<section key={index}>
 									{item.title}
 									<img src={item.image} alt="" />
 									<button onClick={()=>handleRemovetoCar(item.id)} >Eliminar</button>
-							</section>)
+									<p>Cantidad de productos añadidos {item.cantidadItems}</p>
+									<button onClick={()=>handleAddMore(item.id)}> Añadir</button>
+									<button onClick={()=>handleLess(item.id)}> Menos </button>
+								</section>)
 						})}
 				</section>
 				<GetUrl filter={seachByCa} price={priceCategory} alHacerClickToAdd={handleAddToCar} >
