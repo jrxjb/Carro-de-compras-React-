@@ -6,8 +6,19 @@ const [seachByCa,SetSeachByCa]=useState("all")
 const [category,serCategory] =useState("")
 const [priceCategory,SetPriceCategory] = useState("all")
 const [addToCar,SetAddToCar] = useState("none")
-const [renderAddToCar,setRenderAddToCar] = useState([])
+const [renderAddToCar,setRenderAddToCar] = useState(()=>{
+	const miCarro = localStorage.getItem("carroDecomprasJson");
+	 return miCarro? JSON.parse(miCarro):[] 
+}
+)
 const [cantidad,SetCantidad] = useState(0)
+
+
+useEffect(()=>{
+localStorage.setItem("carroDecomprasJson",JSON.stringify(renderAddToCar));
+},[renderAddToCar])
+
+
 
 function categorySeach(){
 SetSeachByCa(!seachByCa)
@@ -38,6 +49,7 @@ function handleLess(id){
 setRenderAddToCar( renderAddToCar.map((item)=>item.id==id && item.cantidadItems>1?
 {...item,cantidadItems:item.cantidadItems-1}:item))
 }
+
 
 	 return(
 <>
