@@ -1,0 +1,4 @@
+.car-and-page{
+    display: flex;
+    flex-direction:row;
+}
