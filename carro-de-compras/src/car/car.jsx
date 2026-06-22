@@ -1,7 +1,7 @@
-export default function Car({renderAddToCar,handleRemovetoCar,handleAddMore,handleLess}){
+export default function Car({renderAddToCar,handleRemovetoCar,handleAddMore,handleLess,className}){
 
     return(
-        				<section>
+        			<section className={className}>
 					<h2>Carrito</h2>
 						{renderAddToCar.map((item,index) => {
 							return(

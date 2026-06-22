@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import "./products.css"
 export default function GetUrl({filter,price,children,alHacerClickToAdd}){
 const [data, setData] = useState([])
 
@@ -21,35 +21,26 @@ const dataPrice = price =="all"? dataFiltrada : dataFiltrada.filter((item)=>item
 
 
 return(
-<div> 
+<div className="lobby-up">  
+<div className="lobby"> 
     {dataPrice.map((producto)=>{
         return(
-            <section key={producto.id}>
+            <section key={producto.id} >
+                  <img src={producto.image} alt={`imagen from ${producto.title}`} />
+                <button onClick={()=>alHacerClickToAdd(producto)}> <h1>Añadir al carrito </h1></button>
                 <p> Categoria {producto.category}</p>
                 <p>Titulo {producto.title}</p>
                 <p>Precio {producto.price}$</p>
                 <p>Descripcion {producto.description}</p>
                 <p>Rating {producto.rating.rate}</p>
                 <p> Count del producto {producto.rating.count}</p>
-                <img src={producto.image} alt={`imagen from ${producto.title}`} />
-                <button onClick={()=>alHacerClickToAdd(producto)}> <h1>Añadir al carrito </h1></button>
-               
-
             </section>
         )
     })} 
-</div>) 
+</div>
+</div>  
+) 
+
 }
 
 
-/*
-    "id
-    "title
-    "price
-    "description 
-    "category
-    "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
-    "rating
-      "rate
-      count
-*/

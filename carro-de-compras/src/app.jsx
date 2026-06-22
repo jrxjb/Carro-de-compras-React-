@@ -42,14 +42,15 @@ setRenderAddToCar( renderAddToCar.map((item)=>item.id==id && item.cantidadItems>
 	 return(
 <>
 <section >
-	<header>
+	<header className="header-class" >
 <BotonesDeGet SetPriceCategory={SetPriceCategory} SetSeachByCa={SetSeachByCa}/>
 	</header>
 	<section className="car-and-page">
-				<GetUrl filter={seachByCa} price={priceCategory} alHacerClickToAdd={handleAddToCar} >
-				</GetUrl>
-				<Car renderAddToCar={renderAddToCar} handleRemovetoCar={handleRemovetoCar}
-				handleAddMore={handleAddMore} handleLess={handleLess}	/>
+				<GetUrl	filter={seachByCa} 
+				price={priceCategory} alHacerClickToAdd={handleAddToCar} />
+		
+				{ renderAddToCar.length > 0  && <Car className="car" renderAddToCar={renderAddToCar} handleRemovetoCar={handleRemovetoCar} 
+				handleAddMore={handleAddMore} handleLess={handleLess}	/>  }
 
 	</section>
 </section>

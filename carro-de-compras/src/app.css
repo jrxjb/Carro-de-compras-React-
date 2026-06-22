@@ -1,4 +1,31 @@
+
+html, body{
+  margin: 0;
+  padding: 0;
+
+min-height: 100vh;
+max-width: 100%;
+}
+
+
 .car-and-page{
     display: flex;
     flex-direction:row;
+    border: 2px black solid;
+   
 }
+
+
+.car{
+    background-color: rgba(25, 25, 51, 0.5);
+     border: 2px black solid;
+}
+
+.header-class{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    background-color: rgba(26, 23, 23, 0.589);
+
+}
+

@@ -1,0 +1,49 @@
+
+.botons-category{
+display: flex;
+flex-direction: row;
+gap: 1px;
+}
+
+.botons-category p{
+width: 150px;
+height: auto;
+font-size: 25px;
+padding: 2px;
+display: flex;
+justify-content: center;
+}
+
+
+
+.botons-prices{
+display: flex;
+flex-direction: row;
+gap: 1px;
+}
+
+.botons-prices p{
+width: 150px;
+height: auto;
+font-size: 25px;
+padding: 2px;
+display: flex;
+justify-content: center;
+
+
+
+}
+
+
+.botons{
+width: 150px;
+height: auto;
+font-size: 20px;
+padding: 2px;
+border:rgb(56, 44, 44) solid 2px;
+}
+
+.div-botons{
+    display: flex;
+    flex-direction: row;
+}

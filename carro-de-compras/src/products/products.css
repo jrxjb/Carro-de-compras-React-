@@ -1,0 +1,53 @@
+.lobby-up{
+
+    margin: auto;
+    width: 100%;
+    height: auto
+}
+
+.lobby{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: silver;
+    height: auto;
+    gap: 15px;
+    padding: 0px;
+    margin: 0;
+}
+
+.lobby section {
+    width: 600px;
+    height: 1500px;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align: justify;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    gap: 10px;
+    background-color: rgb(101, 107, 190);
+
+    border-radius: 5%;
+
+
+}
+
+.lobby section img{
+height: 300px;
+max-width: 580px;
+margin:0px;
+padding: 0%;
+}
+
+.lobby section p{
+    overflow: hidden;
+    display: flex;
+    text-align: justify;
+    padding: 5px;
+    max-width: 580px;
+    max-height: 300px;
+    text-overflow: ellipsis;
+}
