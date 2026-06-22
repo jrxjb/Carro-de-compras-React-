@@ -48,8 +48,8 @@ setRenderAddToCar( renderAddToCar.map((item)=>item.id==id && item.cantidadItems>
 	<section className="car-and-page">
 				<GetUrl filter={seachByCa} price={priceCategory} alHacerClickToAdd={handleAddToCar} >
 				</GetUrl>
-				<Car renderAddToCar={renderAddToCar} handleRemovetoCar={handleRemovetoCar}
-				handleAddMore={handleAddMore} handleLess={handleLess}	/>
+				{ renderAddToCar.length > 0  && <Car renderAddToCar={renderAddToCar} handleRemovetoCar={handleRemovetoCar} 
+				handleAddMore={handleAddMore} handleLess={handleLess}	/>  }
 
 	</section>
 </section>
